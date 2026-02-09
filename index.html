@@ -200,13 +200,33 @@
 
         .industries-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-            gap: 1.5rem;
+            grid-template-columns: repeat(5, 1fr);
+            gap: 1rem;
+            width: 100%;
+        }
+
+        @media (max-width: 1200px) {
+            .industries-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .industries-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 0.75rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .industries-grid {
+                grid-template-columns: 1fr;
+            }
         }
 
         .industry-card {
             background: var(--background);
-            padding: 2rem;
+            padding: 1.5rem;
             border-radius: 12px;
             text-align: center;
             transition: all 0.3s ease;
@@ -219,16 +239,18 @@
             border-color: var(--primary);
         }
 
-        .industry-icon {
-            width: 60px;
-            height: 60px;
-            background: var(--primary);
-            border-radius: 12px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
+        .industry-image {
+            width: 80px;
+            height: 80px;
             margin: 0 auto 1rem;
-            font-size: 1.5rem;
+            border-radius: 12px;
+        }
+
+        @media (max-width: 768px) {
+            .industry-image {
+                width: 60px;
+                height: 60px;
+            }
         }
 
         .industry-card h3 {
@@ -602,30 +624,84 @@
         @media (max-width: 768px) {
             .nav-links {
                 display: none;
+                width: 100%;
+                flex-direction: column;
+                gap: 0.5rem;
+                padding: 1rem;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                right: 0;
+                background: white;
+                box-shadow: var(--shadow-lg);
+            }
+
+            .nav-links.active {
+                display: flex;
+            }
+
+            .nav-links li {
+                text-align: center;
+            }
+
+            .nav-links a {
+                display: block;
+                padding: 0.75rem;
+                border-radius: 8px;
+                background: var(--background);
             }
 
             .mobile-menu {
                 display: block;
             }
 
+            .hero {
+                padding: 6rem 0 3rem;
+            }
+
             .hero h1 {
-                font-size: 2rem;
+                font-size: 1.75rem;
             }
 
             .hero p {
+                font-size: 0.95rem;
+                padding: 0 0.5rem;
+            }
+
+            .hero-cta {
+                padding: 0.875rem 1.5rem;
                 font-size: 1rem;
             }
 
             .hero-stats {
-                gap: 2rem;
+                gap: 1.5rem;
+                padding: 0 1rem;
             }
 
             .stat-number {
-                font-size: 2rem;
+                font-size: 1.75rem;
             }
 
             .section-header h2 {
-                font-size: 2rem;
+                font-size: 1.75rem;
+            }
+
+            .section-header p {
+                font-size: 1rem;
+            }
+
+            .industry-card {
+                padding: 1.25rem;
+            }
+
+            .industry-card h3 {
+                font-size: 1rem;
+            }
+
+            .industry-icon {
+                width: 50px;
+                height: 50px;
+                font-size: 1.25rem;
             }
 
             .pricing-card.featured {
@@ -634,6 +710,19 @@
 
             .pricing-card.featured:hover {
                 transform: translateY(-5px);
+            }
+
+            .steps {
+                grid-template-columns: 1fr;
+            }
+
+            .leads-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .pricing-grid {
+                grid-template-columns: 1fr;
+                padding: 0 1rem;
             }
         }
 
@@ -713,27 +802,27 @@
             </div>
             <div class="industries-grid">
                 <div class="industry-card">
-                    <div class="industry-icon">🏠</div>
+                    <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 200'%3E%3Cdefs%3E%3ClinearGradient id='sky' x1='0%25' y1='0%25' x2='0%25' y2='100%25'%3E%3Cstop offset='0%25' style='stop-color:%2387CEEB'/%3E%3Cstop offset='100%25' style='stop-color:%23E0F4FF'/%3E%3C/linearGradient%3E%3ClinearGradient id='house' x1='0%25' y1='0%25' x2='0%25' y2='100%25'%3E%3Cstop offset='0%25' style='stop-color:%23F5F5F5'/%3E%3Cstop offset='100%25' style='stop-color:%23E0E0E0'/%3E%3C/linearGradient%3E%3ClinearGradient id='roof' x1='0%25' y1='0%25' x2='0%25' y2='100%25'%3E%3Cstop offset='0%25' style='stop-color:%232C5530'/%3E%3Cstop offset='100%25' style='stop-color:%231A3D1E'/%3E%3C/linearGradient%3E%3ClinearGradient id='orange' x1='0%25' y1='0%25' x2='0%25' y2='100%25'%3E%3Cstop offset='0%25' style='stop-color:%23FF8C00'/%3E%3Cstop offset='100%25' style='stop-color:%23FF6B00'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='200' height='200' fill='url(%23sky)'/%3E%3Crect x='40' y='80' width='120' height='90' fill='url(%23house)' rx='4'/%3E%3Cpolygon points='100,20 30,80 170,80' fill='url(%23roof)'/%3E%3Crect x='85' y='110' width='30' height='40' fill='%234A3728' rx='2'/%3E%3Crect x='55' y='95' width='25' height='25' fill='%2387CEEB' stroke='%234A3728' stroke-width='2'/%3E%3Crect x='120' y='95' width='25' height='25' fill='%2387CEEB' stroke='%234A3728' stroke-width='2'/%3E%3Ccircle cx='140' cy='145' r='18' fill='url(%23orange)'/%3E%3Crect x='125' y='140' width='30' height='8' fill='url(%23orange)'/%3E%3Ccircle cx='140' cy='125' r='12' fill='%234A3728'/%3E%3Crect x='132' y='137' width='16' height='25' fill='%232C5530'/%3E%3Crect x='0' y='170' width='200' height='30' fill='%237CB342'/%3E%3C/svg%3E" alt="Roofing Contractor" class="industry-image">
                     <h3>Roofers & Contractors</h3>
                     <p class="price">$25 - $100 per lead</p>
                 </div>
                 <div class="industry-card">
-                    <div class="industry-icon">⚖️</div>
+                    <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 200'%3E%3Cdefs%3E%3ClinearGradient id='bg' x1='0%25' y1='0%25' x2='100%25' y2='100%25'%3E%3Cstop offset='0%25' style='stop-color:%231a1a2e'/%3E%3Cstop offset='100%25' style='stop-color:%2316213e'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='200' height='200' fill='url(%23bg)'/%3E%3Crect x='20' y='30' width='60' height='140' fill='%233D2817'/%3E%3Crect x='25' y='35' width='50' height='8' fill='%235D4037'/%3E%3Crect x='25' y='50' width='50' height='8' fill='%235D4037'/%3E%3Crect x='25' y='65' width='50' height='8' fill='%235D4037'/%3E%3Crect x='27' y='38' width='8' height='25' fill='%231e3a5f'/%3E%3Crect x='37' y='38' width='6' height='25' fill='%238B0000'/%3E%3Crect x='45' y='38' width='7' height='25' fill='%232E5A1C'/%3E%3Crect x='54' y='38' width='8' height='25' fill='%234A3728'/%3E%3Crect x='64' y='38' width='8' height='25' fill='%231e3a5f'/%3E%3Ccircle cx='140' cy='70' r='25' fill='%23F5DEB3'/%3E%3Crect x='115' y='95' width='50' height='70' fill='%231a1a2e' rx='3'/%3E%3Cpath d='M115 95 L140 85 L165 95' fill='%231a1a2e'/%3E%3Cpath d='M135 95 L140 110 L145 95' fill='white'/%3E%3Cpath d='M135 95 L140 85 L145 95' fill='white'/%3E%3C/svg%3E" alt="Personal Injury Lawyer" class="industry-image">
                     <h3>Personal Injury Lawyers</h3>
                     <p class="price">$100 - $500 per lead</p>
                 </div>
                 <div class="industry-card">
-                    <div class="industry-icon">💆</div>
+                    <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 200'%3E%3Cdefs%3E%3ClinearGradient id='spa' x1='0%25' y1='0%25' x2='100%25' y2='100%25'%3E%3Cstop offset='0%25' style='stop-color:%23E8F4F8'/%3E%3Cstop offset='100%25' style='stop-color:%23B8D4E3'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='200' height='200' fill='url(%23spa)'/%3E%3Cellipse cx='100' cy='150' rx='60' ry='20' fill='white'/%3E%3Crect x='80' y='110' width='40' height='40' fill='%23E0E0E0' rx='5'/%3E%3Ccircle cx='60' cy='100' r='20' fill='%23F5DEB3'/%3E%3Crect x='45' y='120' width='30' height='50' fill='%235CB8B2' rx='3'/%3E%3Cpath d='M45 125 L60 120 L75 125' fill='white'/%3E%3Cellipse cx='150' cy='170' rx='30' ry='10' fill='%2387CEEB' opacity='0.6'/%3E%3Ccircle cx='170' cy='60' r='15' fill='%23E91E63' opacity='0.8'/%3E%3Crect x='168' y='70' width='4' height='30' fill='%234CAF50'/%3E%3C/svg%3E" alt="Medical Spa" class="industry-image">
                     <h3>Medical Spas</h3>
                     <p class="price">$40 - $150 per lead</p>
                 </div>
                 <div class="industry-card">
-                    <div class="industry-icon">🏡</div>
+                    <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 200'%3E%3Cdefs%3E%3ClinearGradient id='sunset' x1='0%25' y1='0%25' x2='0%25' y2='100%25'%3E%3Cstop offset='0%25' style='stop-color:%23FF9A56'/%3E%3Cstop offset='50%25' style='stop-color:%23FFCC80'/%3E%3Cstop offset='100%25' style='stop-color:%23FFE0B2'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='200' height='200' fill='url(%23sunset)'/%3E%3Crect x='50' y='80' width='100' height='80' fill='%23F5F5F5' rx='4'/%3E%3Cpolygon points='100,30 35,80 165,80' fill='%232C5530'/%3E%3Crect x='85' y='110' width='30' height='35' fill='%235D4037' rx='2'/%3E%3Ccircle cx='100' cy='127' r='3' fill='%23FFD700'/%3E%3Crect x='60' y='95' width='18' height='18' fill='%2387CEEB' stroke='%234A3728' stroke-width='2'/%3E%3Crect x='122' y='95' width='18' height='18' fill='%2387CEEB' stroke='%234A3728' stroke-width='2'/%3E%3Crect x='150' y='130' width='35' height='25' fill='%232E7D32' rx='2'/%3E%3Crect x='160' y='155' width='4' height='20' fill='%234A3728'/%3E%3Ccircle cx='35' cy='130' r='18' fill='%23F5DEB3'/%3E%3Crect x='20' y='148' width='30' height='35' fill='%231a1a2e' rx='3'/%3E%3Crect x='22' y='148' width='26' height='8' fill='white'/%3E%3C/svg%3E" alt="Real Estate Agent" class="industry-image">
                     <h3>Real Estate Agents</h3>
                     <p class="price">$50 - $300 per lead</p>
                 </div>
                 <div class="industry-card">
-                    <div class="industry-icon">❄️</div>
+                    <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 200'%3E%3Cdefs%3E%3ClinearGradient id='blue' x1='0%25' y1='0%25' x2='100%25' y2='100%25'%3E%3Cstop offset='0%25' style='stop-color:%23E3F2FD'/%3E%3Cstop offset='100%25' style='stop-color:%23BBDEFB'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='200' height='200' fill='url(%23blue)'/%3E%3Crect x='80' y='60' width='100' height='100' fill='%23F5F5F5' rx='4'/%3E%3Cpolygon points='130,20 60,60 200,60' fill='%23607D8B'/%3E%3Crect x='95' y='80' width='20' height='25' fill='%2387CEEB' stroke='%23607D8B' stroke-width='2'/%3E%3Crect x='130' y='80' width='35' height='40' fill='%23C62828'/%3E%3Crect x='135' y='85' width='25' height='30' fill='%231565C0'/%3E%3Crect x='20' y='110' width='45' height='60' fill='%23E0E0E0' rx='3'/%3E%3Crect x='25' y='115' width='35' height='8' fill='%2390A4AE'/%3E%3Crect x='25' y='130' width='35' height='30' fill='%23B0BEC5'/%3E%3Ccircle cx='42' cy='145' r='3' fill='%23607D8B'/%3E%3Ccircle cx='42' cy='155' r='3' fill='%23607D8B'/%3E%3Ccircle cx='145' cy='145' r='18' fill='%23F5DEB3'/%3E%3Crect x='130' y='163' width='30' height='25' fill='%231565C0' rx='3'/%3E%3C/svg%3E" alt="HVAC Technician" class="industry-image">
                     <h3>HVAC & Electricians</h3>
                     <p class="price">$30 - $85 per lead</p>
                 </div>
@@ -1110,15 +1199,14 @@
         // Mobile menu toggle
         document.querySelector('.mobile-menu').addEventListener('click', function() {
             const navLinks = document.querySelector('.nav-links');
-            navLinks.style.display = navLinks.style.display === 'flex' ? 'none' : 'flex';
-            navLinks.style.flexDirection = 'column';
-            navLinks.style.position = 'absolute';
-            navLinks.style.top = '100%';
-            navLinks.style.left = '0';
-            navLinks.style.right = '0';
-            navLinks.style.background = 'white';
-            navLinks.style.padding = '1rem';
-            navLinks.style.boxShadow = 'var(--shadow-lg)';
+            navLinks.classList.toggle('active');
+        });
+
+        // Close mobile menu when clicking a link
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', () => {
+                document.querySelector('.nav-links').classList.remove('active');
+            });
         });
 
         // Form submission handler
