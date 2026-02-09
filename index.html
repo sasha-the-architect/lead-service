@@ -495,6 +495,76 @@
             background: var(--primary-dark);
         }
 
+        /* Tier Legend */
+        .tier-legend {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+            margin-bottom: 2rem;
+        }
+
+        .tier-info {
+            padding: 1rem;
+            border-radius: 12px;
+            text-align: center;
+        }
+
+        .tier-info h4 {
+            margin-bottom: 0.5rem;
+            font-size: 1rem;
+        }
+
+        .tier-info p {
+            font-size: 0.875rem;
+            margin: 0;
+        }
+
+        .basic-info {
+            background: rgba(108, 117, 125, 0.1);
+            border: 2px solid rgba(108, 117, 125, 0.3);
+        }
+
+        .basic-info h4 {
+            color: #6c757d;
+        }
+
+        .standard-info {
+            background: rgba(13, 110, 253, 0.1);
+            border: 2px solid rgba(13, 110, 253, 0.3);
+        }
+
+        .standard-info h4 {
+            color: #0d6efd;
+        }
+
+        .verified-info {
+            background: rgba(25, 135, 84, 0.1);
+            border: 2px solid rgba(25, 135, 84, 0.3);
+        }
+
+        .verified-info h4 {
+            color: #198754;
+        }
+
+        /* Pricing by Industry */
+        .pricing-industry {
+            margin-bottom: 3rem;
+            padding-bottom: 2rem;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .pricing-industry:last-child {
+            border-bottom: none;
+            margin-bottom: 0;
+        }
+
+        .pricing-industry h3 {
+            text-align: center;
+            margin-bottom: 1.5rem;
+            color: var(--text);
+            font-size: 1.5rem;
+        }
+
         /* Trust Signals */
         .trust-signals {
             padding: 3rem 0;
@@ -1092,46 +1162,137 @@
     <section class="pricing" id="pricing">
         <div class="container">
             <div class="section-header">
-                <h2>Pricing by Your Commission Potential</h2>
-                <p>Pricing based on deal size & your revenue per lead</p>
+                <h2>Three Quality Tiers</h2>
+                <p>Choose verification level based on your closing rate & budget</p>
             </div>
-            <div class="pricing-grid">
-                <div class="pricing-card">
-                    <h3>Contractors & HVAC</h3>
-                    <div class="pricing-range">$150<span>/month</span></div>
-                    <ul class="pricing-features">
-                        <li>5-10 leads/day</li>
-                        <li>Basic contact info</li>
-                        <li>Email delivery</li>
-                        <li>Jobs: $500-$10,000</li>
-                        <li>Avg profit: $500-$2,000/job</li>
-                    </ul>
-                    <a href="#contact" class="pricing-btn">Get Started</a>
+            
+            <!-- Tier Legend -->
+            <div class="tier-legend">
+                <div class="tier-info basic-info">
+                    <h4>Basic</h4>
+                    <p>Raw database matches. Some outdated entries. 60% response rate.</p>
                 </div>
-                <div class="pricing-card featured">
-                    <span class="pricing-badge">Best Value</span>
-                    <h3>Medical Spas</h3>
-                    <div class="pricing-range">$300<span>/month</span></div>
-                    <ul class="pricing-features">
-                        <li>10-15 leads/day</li>
-                        <li>Phone + email + address</li>
-                        <li>Email + SMS delivery</li>
-                        <li>Treatments: $1,000-$5,000</li>
-                        <li>Avg profit: $500-$2,500/treatment</li>
-                    </ul>
-                    <a href="#contact" class="pricing-btn">Get Started</a>
+                <div class="tier-info standard-info">
+                    <h4>Standard</h4>
+                    <p>Pre-verified contacts. Duplicate filtered. 80% response rate.</p>
                 </div>
-                <div class="pricing-card">
-                    <h3>Real Estate & PI Lawyers</h3>
-                    <div class="pricing-range">$500<span>/month</span></div>
-                    <ul class="pricing-features">
-                        <li>15-20 leads/day</li>
-                        <li>Personally validated</li>
-                        <li>Priority delivery</li>
-                        <li>Deals: $50,000+</li>
-                        <li>Commissions: 2-40% per deal</li>
-                    </ul>
-                    <a href="#contact" class="pricing-btn">Get Started</a>
+                <div class="tier-info verified-info">
+                    <h4>Verified</h4>
+                    <p>Personally validated. Interest confirmed. 95% response rate.</p>
+                </div>
+            </div>
+
+            <!-- Contractors & HVAC -->
+            <div class="pricing-industry">
+                <h3>Contractors & HVAC</h3>
+                <div class="pricing-grid">
+                    <div class="pricing-card">
+                        <h4>Basic</h4>
+                        <div class="pricing-range">$100<span>/month</span></div>
+                        <ul class="pricing-features">
+                            <li>5-10 leads/day</li>
+                            <li>Name, phone, address</li>
+                            <li>Jobs: $500-$10,000</li>
+                        </ul>
+                        <a href="#contact" class="pricing-btn">Get Started</a>
+                    </div>
+                    <div class="pricing-card featured">
+                        <span class="pricing-badge">Most Popular</span>
+                        <h4>Standard</h4>
+                        <div class="pricing-range">$150<span>/month</span></div>
+                        <ul class="pricing-features">
+                            <li>10-15 leads/day</li>
+                            <li>Phone + email + address</li>
+                            <li>Duplicate filtering</li>
+                        </ul>
+                        <a href="#contact" class="pricing-btn">Get Started</a>
+                    </div>
+                    <div class="pricing-card">
+                        <h4>Verified</h4>
+                        <div class="pricing-range">$200<span>/month</span></div>
+                        <ul class="pricing-features">
+                            <li>15-20 leads/day</li>
+                            <li>Project readiness verified</li>
+                            <li>Budget confirmed</li>
+                        </ul>
+                        <a href="#contact" class="pricing-btn">Get Started</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Medical Spas -->
+            <div class="pricing-industry">
+                <h3>Medical Spas & Wellness</h3>
+                <div class="pricing-grid">
+                    <div class="pricing-card">
+                        <h4>Basic</h4>
+                        <div class="pricing-range">$200<span>/month</span></div>
+                        <ul class="pricing-features">
+                            <li>10-15 leads/day</li>
+                            <li>Name, phone, address</li>
+                            <li>Treatments: $1K-$5K</li>
+                        </ul>
+                        <a href="#contact" class="pricing-btn">Get Started</a>
+                    </div>
+                    <div class="pricing-card featured">
+                        <span class="pricing-badge">Most Popular</span>
+                        <h4>Standard</h4>
+                        <div class="pricing-range">$300<span>/month</span></div>
+                        <ul class="pricing-features">
+                            <li>15-20 leads/day</li>
+                            <li>Phone + email + address</li>
+                            <li>Duplicate filtering</li>
+                        </ul>
+                        <a href="#contact" class="pricing-btn">Get Started</a>
+                    </div>
+                    <div class="pricing-card">
+                        <h4>Verified</h4>
+                        <div class="pricing-range">$400<span>/month</span></div>
+                        <ul class="pricing-features">
+                            <li>20-30 leads/day</li>
+                            <li>Treatment interest confirmed</li>
+                            <li>Budget verified</li>
+                        </ul>
+                        <a href="#contact" class="pricing-btn">Get Started</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Real Estate & PI Lawyers -->
+            <div class="pricing-industry">
+                <h3>Real Estate & PI Lawyers</h3>
+                <div class="pricing-grid">
+                    <div class="pricing-card">
+                        <h4>Basic</h4>
+                        <div class="pricing-range">$350<span>/month</span></div>
+                        <ul class="pricing-features">
+                            <li>15-20 leads/day</li>
+                            <li>Name, phone, address</li>
+                            <li>Deals: $50,000+</li>
+                        </ul>
+                        <a href="#contact" class="pricing-btn">Get Started</a>
+                    </div>
+                    <div class="pricing-card featured">
+                        <span class="pricing-badge">Most Popular</span>
+                        <h4>Standard</h4>
+                        <div class="pricing-range">$500<span>/month</span></div>
+                        <ul class="pricing-features">
+                            <li>20-30 leads/day</li>
+                            <li>Phone + email + address</li>
+                            <li>Duplicate filtering</li>
+                        </ul>
+                        <a href="#contact" class="pricing-btn">Get Started</a>
+                    </div>
+                    <div class="pricing-card">
+                        <h4>Verified</h4>
+                        <div class="pricing-range">$650<span>/month</span></div>
+                        <ul class="pricing-features">
+                            <li>30-40 leads/day</li>
+                            <li>Case/sale intent confirmed</li>
+                            <li>Timeline & budget verified</li>
+                        </ul>
+                        <a href="#contact" class="pricing-btn">Get Started</a>
+                    </div>
                 </div>
             </div>
         </div>
