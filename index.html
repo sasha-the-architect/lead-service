@@ -1,0 +1,1172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LeadGen Pro - Qualified Leads Delivered Daily</title>
+    <meta name="description" content="Get qualified, pre-verified leads delivered daily to your business. Serving roofers, lawyers, medical spas, real estate agents, and HVAC professionals.">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary: #2563eb;
+            --primary-dark: #1d4ed8;
+            --secondary: #0f172a;
+            --accent: #10b981;
+            --accent-dark: #059669;
+            --background: #f8fafc;
+            --surface: #ffffff;
+            --text: #1e293b;
+            --text-light: #64748b;
+            --border: #e2e8f0;
+            --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -2px rgba(0, 0, 0, 0.1);
+            --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -4px rgba(0, 0, 0, 0.1);
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
+            line-height: 1.6;
+            color: var(--text);
+            background: var(--background);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Navigation */
+        nav {
+            background: var(--surface);
+            padding: 1rem 0;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            box-shadow: var(--shadow);
+        }
+
+        nav .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--secondary);
+            text-decoration: none;
+        }
+
+        .logo span {
+            color: var(--primary);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--text);
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+
+        .nav-links a:hover {
+            color: var(--primary);
+        }
+
+        .nav-cta {
+            background: var(--primary);
+            color: white !important;
+            padding: 0.5rem 1.25rem;
+            border-radius: 8px;
+            transition: background 0.3s ease !important;
+        }
+
+        .nav-cta:hover {
+            background: var(--primary-dark) !important;
+        }
+
+        .mobile-menu {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+
+        /* Hero Section */
+        .hero {
+            padding: 8rem 0 5rem;
+            background: linear-gradient(180deg, var(--surface) 0%, var(--background) 100%);
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            font-weight: 800;
+            color: var(--secondary);
+            margin-bottom: 1.5rem;
+            line-height: 1.2;
+        }
+
+        .hero h1 span {
+            color: var(--primary);
+        }
+
+        .hero p {
+            font-size: 1.25rem;
+            color: var(--text-light);
+            max-width: 600px;
+            margin: 0 auto 2rem;
+        }
+
+        .hero-cta {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: var(--primary);
+            color: white;
+            padding: 1rem 2rem;
+            border-radius: 10px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.1rem;
+            transition: all 0.3s ease;
+            box-shadow: var(--shadow);
+        }
+
+        .hero-cta:hover {
+            background: var(--primary-dark);
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .hero-stats {
+            display: flex;
+            justify-content: center;
+            gap: 3rem;
+            margin-top: 3rem;
+            flex-wrap: wrap;
+        }
+
+        .stat {
+            text-align: center;
+        }
+
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--primary);
+        }
+
+        .stat-label {
+            color: var(--text-light);
+            font-size: 0.9rem;
+        }
+
+        /* Industries Served */
+        .industries {
+            padding: 5rem 0;
+            background: var(--surface);
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .section-header h2 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--secondary);
+            margin-bottom: 1rem;
+        }
+
+        .section-header p {
+            color: var(--text-light);
+            font-size: 1.1rem;
+        }
+
+        .industries-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .industry-card {
+            background: var(--background);
+            padding: 2rem;
+            border-radius: 12px;
+            text-align: center;
+            transition: all 0.3s ease;
+            border: 1px solid var(--border);
+        }
+
+        .industry-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-lg);
+            border-color: var(--primary);
+        }
+
+        .industry-icon {
+            width: 60px;
+            height: 60px;
+            background: var(--primary);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1rem;
+            font-size: 1.5rem;
+        }
+
+        .industry-card h3 {
+            font-size: 1.25rem;
+            margin-bottom: 0.5rem;
+            color: var(--secondary);
+        }
+
+        .industry-card .price {
+            color: var(--accent);
+            font-weight: 600;
+            font-size: 0.9rem;
+        }
+
+        /* How It Works */
+        .how-it-works {
+            padding: 5rem 0;
+            background: var(--background);
+        }
+
+        .steps {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+        }
+
+        .step {
+            background: var(--surface);
+            padding: 2rem;
+            border-radius: 12px;
+            text-align: center;
+            position: relative;
+            box-shadow: var(--shadow);
+        }
+
+        .step-number {
+            position: absolute;
+            top: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 40px;
+            height: 40px;
+            background: var(--primary);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            font-size: 1.25rem;
+        }
+
+        .step-icon {
+            font-size: 3rem;
+            margin: 1.5rem 0 1rem;
+        }
+
+        .step h3 {
+            font-size: 1.25rem;
+            margin-bottom: 0.75rem;
+            color: var(--secondary);
+        }
+
+        .step p {
+            color: var(--text-light);
+            font-size: 0.95rem;
+        }
+
+        /* Sample Leads */
+        .sample-leads {
+            padding: 5rem 0;
+            background: var(--surface);
+        }
+
+        .leads-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .lead-card {
+            background: var(--background);
+            border-radius: 12px;
+            overflow: hidden;
+            border: 1px solid var(--border);
+            transition: all 0.3s ease;
+        }
+
+        .lead-card:hover {
+            box-shadow: var(--shadow-lg);
+        }
+
+        .lead-header {
+            background: var(--secondary);
+            color: white;
+            padding: 1rem 1.5rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .lead-header h4 {
+            font-size: 1rem;
+        }
+
+        .lead-badge {
+            background: var(--accent);
+            padding: 0.25rem 0.75rem;
+            border-radius: 20px;
+            font-size: 0.75rem;
+            font-weight: 600;
+        }
+
+        .lead-body {
+            padding: 1.5rem;
+        }
+
+        .lead-detail {
+            display: flex;
+            justify-content: space-between;
+            padding: 0.5rem 0;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .lead-detail:last-child {
+            border-bottom: none;
+        }
+
+        .lead-detail-label {
+            color: var(--text-light);
+            font-size: 0.9rem;
+        }
+
+        .lead-detail-value {
+            font-weight: 500;
+            color: var(--text);
+            text-align: right;
+        }
+
+        /* Pricing */
+        .pricing {
+            padding: 5rem 0;
+            background: var(--background);
+        }
+
+        .pricing-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .pricing-card {
+            background: var(--surface);
+            border-radius: 12px;
+            padding: 2rem;
+            text-align: center;
+            box-shadow: var(--shadow);
+            border: 2px solid var(--border);
+            transition: all 0.3s ease;
+        }
+
+        .pricing-card.featured {
+            border-color: var(--primary);
+            transform: scale(1.05);
+        }
+
+        .pricing-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .pricing-card.featured:hover {
+            transform: scale(1.05) translateY(-5px);
+        }
+
+        .pricing-badge {
+            background: var(--primary);
+            color: white;
+            padding: 0.25rem 1rem;
+            border-radius: 20px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            display: inline-block;
+            margin-bottom: 1rem;
+        }
+
+        .pricing-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 0.5rem;
+            color: var(--secondary);
+        }
+
+        .pricing-range {
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--primary);
+            margin-bottom: 1rem;
+        }
+
+        .pricing-range span {
+            font-size: 1rem;
+            color: var(--text-light);
+            font-weight: 400;
+        }
+
+        .pricing-features {
+            list-style: none;
+            text-align: left;
+            margin: 1.5rem 0;
+        }
+
+        .pricing-features li {
+            padding: 0.5rem 0;
+            padding-left: 1.5rem;
+            position: relative;
+            color: var(--text-light);
+        }
+
+        .pricing-features li::before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: var(--accent);
+            font-weight: 700;
+        }
+
+        .pricing-btn {
+            display: block;
+            width: 100%;
+            padding: 0.875rem;
+            background: var(--primary);
+            color: white;
+            text-decoration: none;
+            border-radius: 8px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+
+        .pricing-btn:hover {
+            background: var(--primary-dark);
+        }
+
+        /* Trust Signals */
+        .trust-signals {
+            padding: 3rem 0;
+            background: var(--surface);
+        }
+
+        .trust-grid {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 3rem;
+            flex-wrap: wrap;
+        }
+
+        .trust-item {
+            text-align: center;
+            color: var(--text-light);
+        }
+
+        .trust-item span {
+            display: block;
+            font-size: 2rem;
+            margin-bottom: 0.5rem;
+        }
+
+        /* Contact Section */
+        .contact {
+            padding: 5rem 0;
+            background: var(--secondary);
+            color: white;
+        }
+
+        .contact .section-header h2 {
+            color: white;
+        }
+
+        .contact .section-header p {
+            color: rgba(255, 255, 255, 0.7);
+        }
+
+        .contact-form {
+            max-width: 500px;
+            margin: 0 auto;
+            background: var(--surface);
+            padding: 2rem;
+            border-radius: 12px;
+            color: var(--text);
+        }
+
+        .form-group {
+            margin-bottom: 1.25rem;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 500;
+        }
+
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+            padding: 0.875rem;
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            font-size: 1rem;
+            font-family: inherit;
+            transition: border-color 0.3s ease;
+        }
+
+        .form-group input:focus,
+        .form-group select:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: var(--primary);
+        }
+
+        .form-group textarea {
+            resize: vertical;
+            min-height: 100px;
+        }
+
+        .submit-btn {
+            width: 100%;
+            padding: 1rem;
+            background: var(--primary);
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .submit-btn:hover {
+            background: var(--primary-dark);
+        }
+
+        .contact-info {
+            text-align: center;
+            margin-top: 2rem;
+            color: rgba(255, 255, 255, 0.7);
+        }
+
+        .contact-info a {
+            color: white;
+            text-decoration: none;
+        }
+
+        /* Footer */
+        footer {
+            background: var(--secondary);
+            color: rgba(255, 255, 255, 0.6);
+            padding: 2rem 0;
+            text-align: center;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        footer a {
+            color: white;
+            text-decoration: none;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+
+            .mobile-menu {
+                display: block;
+            }
+
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .hero p {
+                font-size: 1rem;
+            }
+
+            .hero-stats {
+                gap: 2rem;
+            }
+
+            .stat-number {
+                font-size: 2rem;
+            }
+
+            .section-header h2 {
+                font-size: 2rem;
+            }
+
+            .pricing-card.featured {
+                transform: none;
+            }
+
+            .pricing-card.featured:hover {
+                transform: translateY(-5px);
+            }
+        }
+
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .animate {
+            animation: fadeInUp 0.6s ease forwards;
+        }
+
+        /* Smooth scroll */
+        html {
+            scroll-behavior: smooth;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+        <div class="container">
+            <a href="#" class="logo">Lead<span>Gen</span> Pro</a>
+            <ul class="nav-links">
+                <li><a href="#industries">Industries</a></li>
+                <li><a href="#how-it-works">How It Works</a></li>
+                <li><a href="#sample-leads">Sample Leads</a></li>
+                <li><a href="#pricing">Pricing</a></li>
+                <li><a href="#contact" class="nav-cta">Get Started</a></li>
+            </ul>
+            <button class="mobile-menu" aria-label="Menu">☰</button>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero" id="hero">
+        <div class="container">
+            <h1>Get Qualified Leads <span>Delivered Daily</span></h1>
+            <p>Fresh, pre-verified leads from your local area. Close more deals with less effort — we handle the prospecting, you handle the business.</p>
+            <a href="#contact" class="hero-cta">
+                Start Getting Leads →
+            </a>
+            <div class="hero-stats">
+                <div class="stat">
+                    <div class="stat-number">10,000+</div>
+                    <div class="stat-label">Leads Delivered</div>
+                </div>
+                <div class="stat">
+                    <div class="stat-number">500+</div>
+                    <div class="stat-label">Business Partners</div>
+                </div>
+                <div class="stat">
+                    <div class="stat-number">98%</div>
+                    <div class="stat-label">Satisfaction Rate</div>
+                </div>
+                <div class="stat">
+                    <div class="stat-number">24hrs</div>
+                    <div class="stat-label">Avg. Lead Delivery</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Industries Served -->
+    <section class="industries" id="industries">
+        <div class="container">
+            <div class="section-header">
+                <h2>Industries We Serve</h2>
+                <p>Targeted leads for your specific industry, delivered fresh daily</p>
+            </div>
+            <div class="industries-grid">
+                <div class="industry-card">
+                    <div class="industry-icon">🏠</div>
+                    <h3>Roofers & Contractors</h3>
+                    <p class="price">$25 - $100 per lead</p>
+                </div>
+                <div class="industry-card">
+                    <div class="industry-icon">⚖️</div>
+                    <h3>Personal Injury Lawyers</h3>
+                    <p class="price">$100 - $500 per lead</p>
+                </div>
+                <div class="industry-card">
+                    <div class="industry-icon">💆</div>
+                    <h3>Medical Spas</h3>
+                    <p class="price">$40 - $150 per lead</p>
+                </div>
+                <div class="industry-card">
+                    <div class="industry-icon">🏡</div>
+                    <h3>Real Estate Agents</h3>
+                    <p class="price">$50 - $300 per lead</p>
+                </div>
+                <div class="industry-card">
+                    <div class="industry-icon">❄️</div>
+                    <h3>HVAC & Electricians</h3>
+                    <p class="price">$30 - $85 per lead</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Trust Signals -->
+    <section class="trust-signals">
+        <div class="container">
+            <div class="trust-grid">
+                <div class="trust-item">
+                    <span>🔒</span>
+                    <div>Secure Data</div>
+                </div>
+                <div class="trust-item">
+                    <span>✓</span>
+                    <div>Pre-Verified</div>
+                </div>
+                <div class="trust-item">
+                    <span>📍</span>
+                    <div>Local Leads</div>
+                </div>
+                <div class="trust-item">
+                    <span>⚡</span>
+                    <div>Fast Delivery</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- How It Works -->
+    <section class="how-it-works" id="how-it-works">
+        <div class="container">
+            <div class="section-header">
+                <h2>How It Works</h2>
+                <p>Get started in minutes, start closing deals today</p>
+            </div>
+            <div class="steps">
+                <div class="step">
+                    <div class="step-number">1</div>
+                    <div class="step-icon">📝</div>
+                    <h3>Choose Your Industry</h3>
+                    <p>Select your business type and target location. We'll customize lead filters to match your ideal customer profile.</p>
+                </div>
+                <div class="step">
+                    <div class="step-number">2</div>
+                    <div class="step-icon">🎯</div>
+                    <h3>We Qualify & Deliver</h3>
+                    <p>Our team sources, verifies, and delivers fresh leads directly to your inbox or CRM every single day.</p>
+                </div>
+                <div class="step">
+                    <div class="step-number">3</div>
+                    <div class="step-icon">💰</div>
+                    <h3>Close & Grow</h3>
+                    <p>Focus on selling instead of prospecting. Watch your revenue grow with a steady stream of ready-to-buy customers.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sample Leads -->
+    <section class="sample-leads" id="sample-leads">
+        <div class="container">
+            <div class="section-header">
+                <h2>Sample Leads</h2>
+                <p>Real examples of the quality leads we deliver (anonymized)</p>
+            </div>
+            <div class="leads-grid">
+                <div class="lead-card">
+                    <div class="lead-header">
+                        <h4>Roofing Lead</h4>
+                        <span class="lead-badge">Qualified</span>
+                    </div>
+                    <div class="lead-body">
+                        <div class="lead-detail">
+                            <span class="lead-detail-label">Location</span>
+                            <span class="lead-detail-value">Austin, TX</span>
+                        </div>
+                        <div class="lead-detail">
+                            <span class="lead-detail-label">Project</span>
+                            <span class="lead-detail-value">Full roof replacement</span>
+                        </div>
+                        <div class="lead-detail">
+                            <span class="lead-detail-label">Timeline</span>
+                            <span class="lead-detail-value">Within 30 days</span>
+                        </div>
+                        <div class="lead-detail">
+                            <span class="lead-detail-label">Budget</span>
+                            <span class="lead-detail-value">$15,000 - $20,000</span>
+                        </div>
+                        <div class="lead-detail">
+                            <span class="lead-detail-label">Property</span>
+                            <span class="lead-detail-value">Single family home</span>
+                        </div>
+                        <div class="lead-detail">
+                            <span class="lead-detail-label">Source</span>
+                            <span class="lead-detail-value">Home improvement portal</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="lead-card">
+                    <div class="lead-header">
+                        <h4>Personal Injury Lead</h4>
+                        <span class="lead-badge">Qualified</span>
+                    </div>
+                    <div class="lead-body">
+                        <div class="lead-detail">
+                            <span class="lead-detail-label">Location</span>
+                            <span class="lead-detail-value">Phoenix, AZ</span>
+                        </div>
+                        <div class="lead-detail">
+                            <span class="lead-detail-label">Case Type</span>
+                            <span class="lead-detail-value">Auto accident</span>
+                        </div>
+                        <div class="lead-detail">
+                            <span class="lead-detail-label">Injury Severity</span>
+                            <span class="lead-detail-value">Moderate (medical docs)</span>
+                        </div>
+                        <div class="lead-detail">
+                            <span class="lead-detail-label">Timeline</span>
+                            <span class="lead-detail-value">Ready to consult</span>
+                        </div>
+                        <div class="lead-detail">
+                            <span class="lead-detail-label">Insurance</span>
+                            <span class="lead-detail-value">At-fault: GEICO</span>
+                        </div>
+                        <div class="lead-detail">
+                            <span class="lead-detail-label">Source</span>
+                            <span class="lead-detail-value">Legal directory</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="lead-card">
+                    <div class="lead-header">
+                        <h4>Medical Spa Lead</h4>
+                        <span class="lead-badge">Qualified</span>
+                    </div>
+                    <div class="lead-body">
+                        <div class="lead-detail">
+                            <span class="lead-detail-label">Location</span>
+                            <span class="lead-detail-value">Denver, CO</span>
+                        </div>
+                        <div class="lead-detail">
+                            <span class="lead-detail-label">Interest</span>
+                            <span class="lead-detail-value">CoolSculpting + Botox</span>
+                        </div>
+                        <div class="lead-detail">
+                            <span class="lead-detail-label">Timeline</span>
+                            <span class="lead-detail-value">Within 2 weeks</span>
+                        </div>
+                        <div class="lead-detail">
+                            <span class="lead-detail-label">Budget</span>
+                            <span class="lead-detail-value">$3,000 - $5,000</span>
+                        </div>
+                        <div class="lead-detail">
+                            <span class="lead-detail-label">Age Range</span>
+                            <span class="lead-detail-value">35-45 years old</span>
+                        </div>
+                        <div class="lead-detail">
+                            <span class="lead-detail-label">Source</span>
+                            <span class="lead-detail-value">Beauty platform</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="lead-card">
+                    <div class="lead-header">
+                        <h4>Real Estate Lead</h4>
+                        <span class="lead-badge">Qualified</span>
+                    </div>
+                    <div class="lead-body">
+                        <div class="lead-detail">
+                            <span class="lead-detail-label">Location</span>
+                            <span class="lead-detail-value">Atlanta, GA</span>
+                        </div>
+                        <div class="lead-detail">
+                            <span class="lead-detail-label">Intent</span>
+                            <span class="lead-detail-value">Selling primary home</span>
+                        </div>
+                        <div class="lead-detail">
+                            <span class="lead-detail-label">Timeline</span>
+                            <span class="lead-detail-value">3-6 months</span>
+                        </div>
+                        <div class="lead-detail">
+                            <span class="lead-detail-label">Property Value</span>
+                            <span class="lead-detail-value">$450,000 - $550,000</span>
+                        </div>
+                        <div class="lead-detail">
+                            <span class="lead-detail-label">Motivation</span>
+                            <span class="lead-detail-value">Relocating for work</span>
+                        </div>
+                        <div class="lead-detail">
+                            <span class="lead-detail-label">Source</span>
+                            <span class="lead-detail-value">Property portal</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="lead-card">
+                    <div class="lead-header">
+                        <h4>HVAC Lead</h4>
+                        <span class="lead-badge">Qualified</span>
+                    </div>
+                    <div class="lead-body">
+                        <div class="lead-detail">
+                            <span class="lead-detail-label">Location</span>
+                            <span class="lead-detail-value">Dallas, TX</span>
+                        </div>
+                        <div class="lead-detail">
+                            <span class="lead-detail-label">Service</span>
+                            <span class="lead-detail-value">AC replacement</span>
+                        </div>
+                        <div class="lead-detail">
+                            <span class="lead-detail-label">Timeline</span>
+                            <span class="lead-detail-value">Within 2 weeks</span>
+                        </div>
+                        <div class="lead-detail">
+                            <span class="lead-detail-label">Budget</span>
+                            <span class="lead-detail-value">$8,000 - $12,000</span>
+                        </div>
+                        <div class="lead-detail">
+                            <span class="lead-detail-label">System Age</span>
+                            <span class="lead-detail-value">18 years (original)</span>
+                        </div>
+                        <div class="lead-detail">
+                            <span class="lead-detail-label">Source</span>
+                            <span class="lead-detail-value">Home services network</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="lead-card">
+                    <div class="lead-header">
+                        <h4>Electrician Lead</h4>
+                        <span class="lead-badge">Qualified</span>
+                    </div>
+                    <div class="lead-body">
+                        <div class="lead-detail">
+                            <span class="lead-detail-label">Location</span>
+                            <span class="lead-detail-value">Seattle, WA</span>
+                        </div>
+                        <div class="lead-detail">
+                            <span class="lead-detail-label">Project</span>
+                            <span class="lead-detail-value">EV charger installation</span>
+                        </div>
+                        <div class="lead-detail">
+                            <span class="lead-detail-label">Timeline</span>
+                            <span class="lead-detail-value">Within 30 days</span>
+                        </div>
+                        <div class="lead-detail">
+                            <span class="lead-detail-label">Budget</span>
+                            <span class="lead-detail-value">$2,500 - $4,000</span>
+                        </div>
+                        <div class="lead-detail">
+                            <span class="lead-detail-label">Home Type</span>
+                            <span class="lead-detail-value">Single family home</span>
+                        </div>
+                        <div class="lead-detail">
+                            <span class="lead-detail-label">Source</span>
+                            <span class="lead-detail-value">EV owner community</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing -->
+    <section class="pricing" id="pricing">
+        <div class="container">
+            <div class="section-header">
+                <h2>Simple, Transparent Pricing</h2>
+                <p>Pay only for leads you receive. No hidden fees, no contracts.</p>
+            </div>
+            <div class="pricing-grid">
+                <div class="pricing-card">
+                    <h3>Starter</h3>
+                    <div class="pricing-range">$199<span>/month</span></div>
+                    <ul class="pricing-features">
+                        <li>5-10 leads per month</li>
+                        <li>Email delivery</li>
+                        <li>Basic lead information</li>
+                        <li>Email support</li>
+                    </ul>
+                    <a href="#contact" class="pricing-btn">Get Started</a>
+                </div>
+                <div class="pricing-card featured">
+                    <span class="pricing-badge">Most Popular</span>
+                    <h3>Professional</h3>
+                    <div class="pricing-range">$499<span>/month</span></div>
+                    <ul class="pricing-features">
+                        <li>20-35 leads per month</li>
+                        <li>Email + SMS delivery</li>
+                        <li>Detailed lead profiles</li>
+                        <li>Priority support</li>
+                        <li>Lead quality guarantee</li>
+                    </ul>
+                    <a href="#contact" class="pricing-btn">Get Started</a>
+                </div>
+                <div class="pricing-card">
+                    <h3>Enterprise</h3>
+                    <div class="pricing-range">Custom</div>
+                    <ul class="pricing-features">
+                        <li>Unlimited leads</li>
+                        <li>CRM integration</li>
+                        <li>Dedicated account manager</li>
+                        <li>Custom lead filters</li>
+                        <li>API access</li>
+                    </ul>
+                    <a href="#contact" class="pricing-btn">Contact Us</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact" id="contact">
+        <div class="container">
+            <div class="section-header">
+                <h2>Ready to Grow Your Business?</h2>
+                <p>Fill out the form below and we'll be in touch within 24 hours</p>
+            </div>
+            <form class="contact-form" id="leadForm">
+                <div class="form-group">
+                    <label for="name">Full Name</label>
+                    <input type="text" id="name" name="name" required placeholder="John Smith">
+                </div>
+                <div class="form-group">
+                    <label for="email">Email Address</label>
+                    <input type="email" id="email" name="email" required placeholder="john@company.com">
+                </div>
+                <div class="form-group">
+                    <label for="phone">Phone Number</label>
+                    <input type="tel" id="phone" name="phone" placeholder="(555) 123-4567">
+                </div>
+                <div class="form-group">
+                    <label for="company">Company Name</label>
+                    <input type="text" id="company" name="company" placeholder="ABC Roofing Inc.">
+                </div>
+                <div class="form-group">
+                    <label for="industry">Industry</label>
+                    <select id="industry" name="industry" required>
+                        <option value="">Select your industry</option>
+                        <option value="roofing">Roofing & Contracting</option>
+                        <option value="lawyer">Personal Injury Law</option>
+                        <option value="medspa">Medical Spa</option>
+                        <option value="realestate">Real Estate</option>
+                        <option value="hvac">HVAC & Electrical</option>
+                        <option value="other">Other</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="location">Target Location(s)</label>
+                    <input type="text" id="location" name="location" placeholder="e.g., Austin, TX or State-wide">
+                </div>
+                <div class="form-group">
+                    <label for="message">Additional Information</label>
+                    <textarea id="message" name="message" placeholder="Tell us about your ideal customer or any specific requirements..."></textarea>
+                </div>
+                <button type="submit" class="submit-btn">Request Lead Information</button>
+            </form>
+            <div class="contact-info">
+                <p>Prefer to email directly? <a href="mailto:leads@leadgenpro.com">leads@leadgenpro.com</a></p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2026 LeadGen Pro. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu toggle
+        document.querySelector('.mobile-menu').addEventListener('click', function() {
+            const navLinks = document.querySelector('.nav-links');
+            navLinks.style.display = navLinks.style.display === 'flex' ? 'none' : 'flex';
+            navLinks.style.flexDirection = 'column';
+            navLinks.style.position = 'absolute';
+            navLinks.style.top = '100%';
+            navLinks.style.left = '0';
+            navLinks.style.right = '0';
+            navLinks.style.background = 'white';
+            navLinks.style.padding = '1rem';
+            navLinks.style.boxShadow = 'var(--shadow-lg)';
+        });
+
+        // Form submission handler
+        document.getElementById('leadForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const formData = new FormData(this);
+            const data = Object.fromEntries(formData);
+            
+            // In production, this would send to your backend
+            console.log('Form submitted:', data);
+            
+            // Show success message
+            alert('Thank you for your interest! We\'ll be in touch within 24 hours to discuss your lead needs.');
+            this.reset();
+        });
+
+        // Smooth scroll for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Add scroll animation to elements
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('animate');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.industry-card, .step, .lead-card, .pricing-card').forEach(el => {
+            observer.observe(el);
+        });
+    </script>
+</body>
+</html>
